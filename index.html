@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAMESH MISHRA · Life Insurance</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #1e2a3a;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER */
+    header {
+      background: #0a2647;
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .header-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .brand h1 i {
+      color: #ffb347;
+      margin-right: 6px;
+    }
+
+    .brand .tagline {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      font-weight: 300;
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      border-bottom-color: #ffb347;
+      color: #ffd89a;
+    }
+
+    nav a i {
+      margin-right: 6px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(145deg, #e9eef3, #ffffff);
+      padding: 50px 0 40px;
+      border-radius: 0 0 40px 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 18px rgba(0,20,30,0.04);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      flex: 1 1 300px;
+    }
+
+    .hero-text h2 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #0a2647;
+      margin-bottom: 12px;
+    }
+
+    .hero-text h2 span {
+      color: #c76d1e;
+    }
+
+    .hero-text p {
+      font-size: 1.15rem;
+      max-width: 500px;
+      color: #2c3e4e;
+      margin-bottom: 18px;
+    }
+
+    .company-badge {
+      background: #0a2647;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 60px;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(10,38,71,0.2);
+    }
+
+    .company-badge i {
+      margin-right: 10px;
+      color: #ffb347;
+    }
+
+    .hero-contact {
+      background: white;
+      padding: 24px 28px;
+      border-radius: 28px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.04);
+      flex: 1 1 260px;
+      margin-top: 20px;
+    }
+
+    .hero-contact h3 {
+      font-size: 1.2rem;
+      color: #0a2647;
+      margin-bottom: 14px;
+      border-bottom: 2px solid #f0f4fa;
+      padding-bottom: 8px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: #1e2a3a;
+    }
+
+    .contact-item i {
+      width: 24px;
+      color: #c76d1e;
+      font-size: 1.2rem;
+    }
+
+    .contact-item a {
+      color: #1e2a3a;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: #0a2647;
+      text-decoration: underline;
+    }
+
+    /* cards / sections */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0a2647;
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 4px solid #ffb347;
+      display: inline-block;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 20px 0 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 26px 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+      transition: 0.2s ease;
+      border: 1px solid #ebf0f5;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(0,20,30,0.06);
+      border-color: #d0dce8;
+    }
+
+    .card i {
+      font-size: 2.6rem;
+      color: #c76d1e;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: #0a2647;
+    }
+
+    .card p {
+      color: #2d4055;
+    }
+
+    /* POLICY & TERMS page sections (hidden by default) */
+    .page-section {
+      display: none;
+      background: white;
+      border-radius: 32px;
+      padding: 32px 36px;
+      margin: 30px 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+      border: 1px solid #e2eaf2;
+    }
+
+    .page-section.active {
+      display: block;
+    }
+
+    .page-section h2 {
+      font-size: 2rem;
+      color: #0a2647;
+      margin-bottom: 16px;
+    }
+
+    .page-section h2 i {
+      color: #c76d1e;
+      margin-right: 10px;
+    }
+
+    .page-section h3 {
+      margin: 24px 0 8px;
+      color: #1f3a5a;
+    }
+
+    .page-section p, .page-section li {
+      color: #1e3347;
+    }
+
+    .page-section ul {
+      padding-left: 22px;
+      margin: 12px 0;
+    }
+
+    .page-section li {
+      margin-bottom: 6px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 2px solid #e2eaf2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #3b4d62;
+    }
+
+    .footer-note .copy {
+      font-size: 0.95rem;
+    }
+
+    .footer-note .copy i {
+      color: #c76d1e;
+    }
+
+    .footer-links a {
+      color: #1e3a5a;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+      color: #c76d1e;
+    }
+
+    /* contact page special */
+    .contact-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      background: #f8faff;
+      padding: 24px;
+      border-radius: 28px;
+      margin: 16px 0;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: white;
+      padding: 14px 20px;
+      border-radius: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .contact-detail-item i {
+      font-size: 1.6rem;
+      color: #c76d1e;
+      width: 40px;
+    }
+
+    @media (max-width: 700px) {
+      .header-flex {
+        flex-direction: column;
+        align-items: start;
+        gap: 12px;
+      }
+      nav {
+        gap: 16px;
+      }
+      .hero-text h2 {
+        font-size: 2rem;
+      }
+      .contact-detail-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-note {
+        flex-direction: column;
+        gap: 12px;
+        align-items: start;
+      }
+      .footer-links a {
+        margin-left: 0;
+        margin-right: 20px;
+      }
+    }
+
+    /* utility */
+    .text-center { text-align: center; }
+    .mt-2 { margin-top: 20px; }
+    .mb-1 { margin-bottom: 10px; }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #0a2647;
+      color: #0a2647;
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      background: #0a2647;
+      color: white;
+    }
+
+    .btn-outline i {
+      margin-right: 8px;
+    }
+
+    .fake-link {
+      cursor: pointer;
+      color: #0a2647;
+      font-weight: 500;
+    }
+
+    .fake-link:hover {
+      color: #c76d1e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="brand">
+        <h1><i class="fas fa-shield-alt"></i> RAMESH MISHRA</h1>
+        <div class="tagline"><i class="fas fa-life-ring"></i> life insurance · trust since 2007</div>
+      </div>
+      <nav>
+        <a href="#" id="navHome" class="nav-link active-link"><i class="fas fa-home"></i> Home</a>
+        <a href="#" id="navPrivacy" class="nav-link"><i class="fas fa-lock"></i> Privacy</a>
+        <a href="#" id="navTerms" class="nav-link"><i class="fas fa-file-contract"></i> Terms</a>
+        <a href="#" id="navContact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HOME page (default) -->
+    <div id="homePage">
+      <div class="hero">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h2>Life insurance <span>for every future</span></h2>
+            <p>A life insurance company is a financial institution that provides Life Insurance contracts. Secure your family's tomorrow with RAMESH MISHRA.</p>
+            <div class="company-badge">
+              <i class="fas fa-phone-alt"></i> 9818 677054
+            </div>
+          </div>
+          <div class="hero-contact">
+            <h3><i class="fas fa-address-card"></i> Contact</h3>
+            <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:RKM2007@GMAIL.CON">RKM2007@GMAIL.CON</a></div>
+            <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+919818677054">9818 677054</a></div>
+            <div class="contact-item"><i class="fas fa-map-pin"></i> NEW DELHI · 110091</div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title"><i class="fas fa-umbrella"></i> Our insurance solutions</h2>
+      <div class="card-grid">
+        <div class="card"><i class="fas fa-family"></i><h3>Term life</h3><p>Pure protection for your loved ones. Affordable premiums, high coverage.</p></div>
+        <div class="card"><i class="fas fa-piggy-bank"></i><h3>Endowment</h3><p>Savings + protection. Maturity benefits to secure your goals.</p></div>
+        <div class="card"><i class="fas fa-hand-holding-heart"></i><h3>Whole life</h3><p>Lifetime coverage with cash value growth. Legacy planning.</p></div>
+        <div class="card"><i class="fas fa-child"></i><h3>Child plan</h3><p>Secure your child's future education and marriage.</p></div>
+      </div>
+
+      <!-- Copyright & footer snippet (also appears on all pages) -->
+      <div class="footer-note">
+        <div class="copy"><i class="far fa-copyright"></i> 2026 RAMESH MISHRA · Life insurance contracts</div>
+        <div class="footer-links">
+          <span class="fake-link" id="footerPrivacy">Privacy</span>
+          <span class="fake-link" id="footerTerms">Terms</span>
+          <span class="fake-link" id="footerContact">Contact</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIVACY POLICY -->
+    <div id="privacyPage" class="page-section">
+      <h2><i class="fas fa-user-shield"></i> Privacy Policy</h2>
+      <p><strong>Last updated:</strong> June 2026</p>
+      <p>RAMESH MISHRA (“we”, “our”, “us”) respects your privacy. This policy describes how we collect, use, and protect your personal information when you interact with our life insurance services.</p>
+      <h3>Information we collect</h3>
+      <ul>
+        <li><strong>Personal identification:</strong> Name, address, email (RKM2007@GMAIL.CON), phone (9818 677054), date of birth.</li>
+        <li><strong>Financial information:</strong> Payment details, income range for underwriting.</li>
+        <li><strong>Health data:</strong> Medical history relevant to life insurance contracts.</li>
+      </ul>
+      <h3>How we use your data</h3>
+      <ul>
+        <li>To process and administer your life insurance policy.</li>
+        <li>To communicate with you about your policy, updates, and offers.</li>
+        <li>To comply with legal and regulatory requirements.</li>
+      </ul>
+      <h3>Data security</h3>
+      <p>We implement industry-standard encryption and access controls. Your data is stored securely and never shared with third parties except for policy administration or as required by law.</p>
+      <h3>Your rights</h3>
+      <p>You may request access, correction, or deletion of your data by contacting us at RKM2007@GMAIL.CON or 9818 677054.</p>
+      <p><i class="fas fa-map-pin"></i> NEW DELHI · 110091</p>
+      <div class="footer-note" style="border-top: 1px solid #dce5ef; margin-top: 28px;">
+        <div class="copy"><i class="far fa-copyright"></i> 2026 RAMESH MISHRA</div>
+        <div><span class="fake-link" id="backHomeFromPrivacy"><i class="fas fa-arrow-left"></i> Back to home</span></div>
+      </div>
+    </div>
+
+    <!-- TERMS AND CONDITIONS -->
+    <div id="termsPage" class="page-section">
+      <h2><i class="fas fa-gavel"></i> Terms and Conditions</h2>
+      <p><strong>Effective:</strong> June 2026</p>
+      <p>By purchasing a life insurance contract from RAMESH MISHRA, you agree to the following terms.</p>
+      <h3>1. Contract agreement</h3>
+      <p>All life insurance policies are subject to underwriting and approval. The contract is binding once the first premium is paid and the policy is issued.</p>
+      <h3>2. Premium payments</h3>
+      <p>Premiums must be paid on time to keep the policy active. Grace period of 30 days applies. Non‑payment may result in lapse.</p>
+      <h3>3. Claims</h3>
+      <p>In case of a claim, the nominee must submit the required documents within 90 days. Claim settlement is subject to policy terms and conditions.</p>
+      <h3>4. Surrender and cancellation</h3>
+      <p>Policies may be surrendered after the lock‑in period. Surrender value is determined as per the policy schedule.</p>
+      <h3>5. Governing law</h3>
+      <p>These terms are governed by the laws of India. Any disputes shall be subject to the jurisdiction of courts in NEW DELHI.</p>
+      <p><i class="fas fa-phone"></i> 9818 677054 · <i class="fas fa-envelope"></i> RKM2007@GMAIL.CON</p>
+      <div class="footer-note" style="border-top: 1px solid #dce5ef; margin-top: 28px;">
+        <div class="copy"><i class="far fa-copyright"></i> 2026 RAMESH MISHRA</div>
+        <div><span class="fake-link" id="backHomeFromTerms"><i class="fas fa-arrow-left"></i> Back to home</span></div>
+      </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contactPage" class="page-section">
+      <h2><i class="fas fa-address-book"></i> Contact</h2>
+      <p>We’re here to help. Reach out for any queries about life insurance contracts.</p>
+      <div class="contact-detail-grid">
+        <div class="contact-detail-item"><i class="fas fa-user-circle"></i> <div><strong>RAMESH MISHRA</strong><br>Founder & agent</div></div>
+        <div class="contact-detail-item"><i class="fas fa-envelope"></i> <div><a href="mailto:RKM2007@GMAIL.CON">RKM2007@GMAIL.CON</a></div></div>
+        <div class="contact-detail-item"><i class="fas fa-phone-alt"></i> <div><a href="tel:+919818677054">9818 677054</a></div></div>
+        <div class="contact-detail-item"><i class="fas fa-map-marker-alt"></i> <div>NEW DELHI · 110091</div></div>
+      </div>
+      <p><i class="fas fa-clock"></i> Mon–Sat 10:00 AM – 6:00 PM (IST)</p>
+      <p style="margin-top: 12px;"><i class="fas fa-building"></i> A life insurance company is a financial institution that provides Life Insurance contracts.</p>
+      <div class="footer-note" style="border-top: 1px solid #dce5ef; margin-top: 28px;">
+        <div class="copy"><i class="far fa-copyright"></i> 2026 RAMESH MISHRA</div>
+        <div><span class="fake-link" id="backHomeFromContact"><i class="fas fa-arrow-left"></i> Back to home</span></div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function() {
+      // get elements
+      const homePage = document.getElementById('homePage');
+      const privacyPage = document.getElementById('privacyPage');
+      const termsPage = document.getElementById('termsPage');
+      const contactPage = document.getElementById('contactPage');
+
+      const navHome = document.getElementById('navHome');
+      const navPrivacy = document.getElementById('navPrivacy');
+      const navTerms = document.getElementById('navTerms');
+      const navContact = document.getElementById('navContact');
+
+      // footer fake links
+      const footerPrivacy = document.getElementById('footerPrivacy');
+      const footerTerms = document.getElementById('footerTerms');
+      const footerContact = document.getElementById('footerContact');
+
+      // back buttons
+      const backHomeFromPrivacy = document.getElementById('backHomeFromPrivacy');
+      const backHomeFromTerms = document.getElementById('backHomeFromTerms');
+      const backHomeFromContact = document.getElementById('backHomeFromContact');
+
+      function showPage(pageId) {
+        // hide all pages
+        homePage.style.display = 'none';
+        privacyPage.classList.remove('active');
+        termsPage.classList.remove('active');
+        contactPage.classList.remove('active');
+
+        // show selected
+        if (pageId === 'home') {
+          homePage.style.display = 'block';
+        } else if (pageId === 'privacy') {
+          privacyPage.classList.add('active');
+        } else if (pageId === 'terms') {
+          termsPage.classList.add('active');
+        } else if (pageId === 'contact') {
+          contactPage.classList.add('active');
+        }
+
+        // update nav active style (just visual)
+        [navHome, navPrivacy, navTerms, navContact].forEach(el => el.style.borderBottom = '2px solid transparent');
+        if (pageId === 'home') navHome.style.borderBottom = '2px solid #ffb347';
+        else if (pageId === 'privacy') navPrivacy.style.borderBottom = '2px solid #ffb347';
+        else if (pageId === 'terms') navTerms.style.borderBottom = '2px solid #ffb347';
+        else if (pageId === 'contact') navContact.style.borderBottom = '2px solid #ffb347';
+      }
+
+      // event listeners
+      navHome.addEventListener('click', (e) => { e.preventDefault(); showPage('home'); });
+      navPrivacy.addEventListener('click', (e) => { e.preventDefault(); showPage('privacy'); });
+      navTerms.addEventListener('click', (e) => { e.preventDefault(); showPage('terms'); });
+      navContact.addEventListener('click', (e) => { e.preventDefault(); showPage('contact'); });
+
+      footerPrivacy.addEventListener('click', () => showPage('privacy'));
+      footerTerms.addEventListener('click', () => showPage('terms'));
+      footerContact.addEventListener('click', () => showPage('contact'));
+
+      backHomeFromPrivacy.addEventListener('click', () => showPage('home'));
+      backHomeFromTerms.addEventListener('click', () => showPage('home'));
+      backHomeFromContact.addEventListener('click', () => showPage('home'));
+
+      // set default home
+      showPage('home');
+    })();
+  </script>
+  <!-- small extra: copyright displayed also in footer of each page, but the main footer already present -->
+</body>
+</html>
